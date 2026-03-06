@@ -1,0 +1,64 @@
+{% load static %}
+
+<nav class="bg-white shadow-md fixed w-full z-50">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <a href="{% url 'home' %}" class="flex items-center gap-2">
+            <img src="{% static 'images/logo.png' %}" class="h-10">
+        </a>
+
+        <ul class="hidden md:flex gap-8 font-medium text-gray-700">
+            <li><a href="{% url 'home' %}" class="hover:text-pink-600">Home</a></li>
+            <li><a href="{% url 'about' %}" class="hover:text-pink-600">About</a></li>
+            <li><a href="{% url 'services' %}" class="hover:text-pink-600">Services</a></li>
+            <li><a href="{% url 'management' %}" class="hover:text-pink-600">Management</a></li>
+            <li><a href="{% url 'gallery' %}" class="hover:text-pink-600">Gallery</a></li>
+            <li><a href="{% url 'contact' %}" class="hover:text-pink-600">Contact</a></li>
+        </ul>
+
+        <button onclick="openMenu()" class="md:hidden text-2xl">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed top-0 right-[-100%] w-72 h-full bg-white shadow-xl transition-all duration-500 z-50">
+
+    <div class="p-6 flex justify-between items-center border-b">
+
+        <h2 class="text-xl font-semibold">Menu</h2>
+
+        <button onclick="closeMenu()">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
+
+    </div>
+
+    <ul class="flex flex-col gap-6 p-6 text-lg">
+
+        <li><a href="{% url 'home' %}" onclick="closeMenu()">Home</a></li>
+        <li><a href="{% url 'about' %}" onclick="closeMenu()">About</a></li>
+        <li><a href="{% url 'services' %}" onclick="closeMenu()">Services</a></li>
+        <li><a href="{% url 'management' %}" onclick="closeMenu()">Management</a></li>
+        <li><a href="{% url 'gallery' %}" onclick="closeMenu()">Gallery</a></li>
+        <li><a href="{% url 'contact' %}" onclick="closeMenu()">Contact</a></li>
+
+    </ul>
+
+</div>
+
+<script>
+
+    function openMenu() {
+        document.getElementById("mobileMenu").style.right = "0";
+    }
+
+    function closeMenu() {
+        document.getElementById("mobileMenu").style.right = "-100%";
+    }
+
+</script>
