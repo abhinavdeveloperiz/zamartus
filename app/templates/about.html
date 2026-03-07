@@ -5,7 +5,7 @@
 
 <!-- HERO SECTION -->
 
-<section class="relative min-h-[60vh] flex items-center">
+<section class="relative min-h-[50vh] flex items-center">
 
     <div class="absolute inset-0">
         <img src="https://www.karmelinternational.org/blog/files/blog/WhatsApp%20Image%202025-05-04%20at%209.56.58%20PM.jpeg"
@@ -20,14 +20,13 @@
             ABOUT ZAMARTUS
         </p>
 
-        <h1 class="text-4xl md:text-6xl font-bold border-l-4 border-b-4 border-[#d97706] pl-4 pb-4 inline-block">
+        <h1 class="text-4xl  font-bold border-l-4 border-b-4 border-[#d97706] pl-4 pb-4 inline-block">
             Designing Academic Futures
         </h1>
 
-        <p class="mt-6 text-gray-200 max-w-2xl">
+        <p class="mt-6 text-gray-200 text-md max-w-2xl">
             Zamartus is a next-generation education mentoring platform focused on
-            helping students discover their true potential, choose the right
-            academic pathways, and build stable professional careers.
+            helping students discover their true potential
         </p>
 
     </div>
@@ -42,7 +41,7 @@
 
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-        <div>
+        <div data-aos="zoom-in">
 
             <span class="text-[#d97706] font-semibold tracking-wide">
                 OUR STORY
@@ -56,7 +55,7 @@
 
             </h2>
 
-            <p class="text-gray-600 mt-6 leading-relaxed">
+            <p class="text-gray-600 mt-6 leading-relaxed text-justify">
 
                 Many students struggle in their careers not because they lack ability,
                 but because their course choices are influenced by peer pressure,
@@ -68,7 +67,7 @@
 
             </p>
 
-            <p class="text-gray-600 mt-6 leading-relaxed">
+            <p class="text-gray-600 mt-6 leading-relaxed text-justify">
 
                 We believe education alone is not enough. Skills, mindset,
                 career direction, and mentorship must grow together to
@@ -79,9 +78,9 @@
         </div>
 
 
-        <div class="relative">
+        <div class="relative" data-aos="zoom-out">
 
-            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94" class="rounded-3xl shadow-xl">
+            <img src="{% static 'doodle/about.png' %}">
 
         </div>
 
@@ -93,64 +92,95 @@
 
 <!-- BELIEF SYSTEM -->
 
-<section class="py-24 bg-gray-50">
+<section class="py-24 bg-white">
 
     <div class="max-w-7xl mx-auto px-6">
 
-        <div class="text-center mb-16">
+        <!-- HEADER -->
 
-            <p class="text-[#d97706] font-semibold tracking-wide">
+        <div class="text-center mb-20">
+
+            <p class="text-[#d97706] font-semibold tracking-widest mb-3">
                 OUR BELIEF SYSTEM
             </p>
 
-            <h2 class="text-4xl font-bold text-[#7A0048]">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#7A0048]">
                 Our Educational Philosophy
             </h2>
 
         </div>
 
+
+        <!-- BELIEF GRID -->
+
         <div class="grid md:grid-cols-3 gap-10">
 
-            <div class="bg-white p-8 rounded-3xl shadow-lg">
 
-                <h3 class="font-semibold text-[#7A0048] mb-3">
+
+            <!-- CARD 1 -->
+
+            <div class="belief-card">
+
+                <div class="belief-icon bg-[#d97706]/10 text-[#d97706]">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+
+                <h3 class="belief-title">
                     Education With Employability
                 </h3>
 
-                <p class="text-gray-600 text-sm">
+                <p class="belief-text">
                     Education without employable skills is incomplete.
-                    Students must develop real-world competencies alongside academics.
+                    Students must develop real-world competencies
+                    alongside academics.
                 </p>
 
             </div>
 
 
-            <div class="bg-white p-8 rounded-3xl shadow-lg">
 
-                <h3 class="font-semibold text-[#7A0048] mb-3">
+            <!-- CARD 2 -->
+
+            <div class="belief-card">
+
+                <div class="belief-icon bg-[#7A0048]/10 text-[#7A0048]">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <h3 class="belief-title">
                     Psychometric Career Mapping
                 </h3>
 
-                <p class="text-gray-600 text-sm">
-                    Every student has measurable potential. Career decisions should begin
-                    with aptitude, personality, and interest mapping.
+                <p class="belief-text">
+                    Every student has measurable potential. Career
+                    decisions should begin with aptitude,
+                    personality, and interest mapping.
                 </p>
 
             </div>
 
 
-            <div class="bg-white p-8 rounded-3xl shadow-lg">
 
-                <h3 class="font-semibold text-[#7A0048] mb-3">
+            <!-- CARD 3 -->
+
+            <div class="belief-card">
+
+                <div class="belief-icon bg-[#d97706]/10 text-[#d97706]">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+
+                <h3 class="belief-title">
                     Ethical Placement
                 </h3>
 
-                <p class="text-gray-600 text-sm">
+                <p class="belief-text">
                     Career outcomes must be ethical, transparent,
                     and aligned with long-term professional success.
                 </p>
 
             </div>
+
+
 
         </div>
 
@@ -158,11 +188,51 @@
 
 </section>
 
+<style>
+    .belief-card {
+        background: white;
+        padding: 35px;
+        text-align: center;
+        transition: all .35s ease;
+    }
+
+    .belief-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+        border-radius: 25px;
+    }
+
+    .belief-icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        font-size: 24px;
+        margin: 0 auto 18px;
+    }
+
+    .belief-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #7A0048;
+        margin-bottom: 10px;
+    }
+
+    .belief-text {
+        font-size: 14px;
+        color: #6b7280;
+        line-height: 1.6;
+    }
+</style>
+
+
 
 
 <!-- CORE SERVICES -->
 
-<section class="py-24 bg-white">
+<section class="pb-24 pt-8 bg-white">
 
     <div class="max-w-7xl mx-auto px-6">
 
@@ -179,17 +249,20 @@
         </div>
 
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 no-scrollbar">
 
-            <div class="bg-white rounded-3xl shadow-lg p-8 border-t-4 border-[#7A0048]">
+            <!-- CARD -->
 
-                <i class="fa-solid fa-brain text-[#d97706] text-3xl mb-4"></i>
+            <div
+                class="snap-start min-w-[320px] md:min-w-[380px] bg-white rounded-3xl shadow-lg p-10 border-t-4 border-[#7A0048]">
 
-                <h3 class="font-semibold text-[#7A0048] mb-2">
+                <i class="fa-solid fa-brain text-[#d97706] text-4xl mb-6"></i>
+
+                <h3 class="font-semibold text-[#7A0048] text-lg mb-3">
                     Psychometric Assessment
                 </h3>
 
-                <p class="text-gray-600 text-sm">
+                <p class="text-gray-600 text-sm leading-relaxed">
                     Discover aptitude, personality traits,
                     learning style, and career suitability.
                 </p>
@@ -197,15 +270,18 @@
             </div>
 
 
-            <div class="bg-white rounded-3xl shadow-lg p-8 border-t-4 border-[#7A0048]">
+            <!-- CARD -->
 
-                <i class="fa-solid fa-university text-[#d97706] text-3xl mb-4"></i>
+            <div
+                class="snap-start min-w-[320px] md:min-w-[380px] bg-white rounded-3xl shadow-lg p-10 border-t-4 border-[#7A0048]">
 
-                <h3 class="font-semibold text-[#7A0048] mb-2">
+                <i class="fa-solid fa-university text-[#d97706] text-4xl mb-6"></i>
+
+                <h3 class="font-semibold text-[#7A0048] text-lg mb-3">
                     Academic Admission Strategy
                 </h3>
 
-                <p class="text-gray-600 text-sm">
+                <p class="text-gray-600 text-sm leading-relaxed">
                     Guidance for course selection, university admissions,
                     scholarships, and global academic pathways.
                 </p>
@@ -213,15 +289,18 @@
             </div>
 
 
-            <div class="bg-white rounded-3xl shadow-lg p-8 border-t-4 border-[#7A0048]">
+            <!-- CARD -->
 
-                <i class="fa-solid fa-lightbulb text-[#d97706] text-3xl mb-4"></i>
+            <div
+                class="snap-start min-w-[320px] md:min-w-[380px] bg-white rounded-3xl shadow-lg p-10 border-t-4 border-[#7A0048]">
 
-                <h3 class="font-semibold text-[#7A0048] mb-2">
+                <i class="fa-solid fa-lightbulb text-[#d97706] text-4xl mb-6"></i>
+
+                <h3 class="font-semibold text-[#7A0048] text-lg mb-3">
                     Skill Development
                 </h3>
 
-                <p class="text-gray-600 text-sm">
+                <p class="text-gray-600 text-sm leading-relaxed">
                     Communication, leadership, AI & digital skills,
                     and career readiness programs.
                 </p>
@@ -229,15 +308,18 @@
             </div>
 
 
-            <div class="bg-white rounded-3xl shadow-lg p-8 border-t-4 border-[#7A0048]">
+            <!-- CARD -->
 
-                <i class="fa-solid fa-user-tie text-[#d97706] text-3xl mb-4"></i>
+            <div
+                class="snap-start min-w-[320px] md:min-w-[380px] bg-white rounded-3xl shadow-lg p-10 border-t-4 border-[#7A0048]">
 
-                <h3 class="font-semibold text-[#7A0048] mb-2">
+                <i class="fa-solid fa-user-tie text-[#d97706] text-4xl mb-6"></i>
+
+                <h3 class="font-semibold text-[#7A0048] text-lg mb-3">
                     Mentorship Programs
                 </h3>
 
-                <p class="text-gray-600 text-sm">
+                <p class="text-gray-600 text-sm leading-relaxed">
                     Long-term mentorship, internships,
                     and placement guidance until professional stability.
                 </p>
@@ -245,6 +327,11 @@
             </div>
 
         </div>
+
+
+
+
+
 
     </div>
 

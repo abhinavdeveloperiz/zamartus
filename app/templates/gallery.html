@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+
+<section class="relative min-h-[50vh] flex items-center">
+
+    <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" class="w-full h-full object-cover">
+    </div>
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 text-white">
+
+        <p class="text-[#d97706] font-semibold tracking-wide mb-3">
+            OUR Gallery
+        </p>
+
+        <h1 class="text-4xl font-bold border-l-4 border-b-4 border-[#d97706] pl-4 pb-4 inline-block">
+            Gallery
+        </h1>
+
+        <p class="mt-6 text-gray-200 text-md max-w-xl">
+            Explore our portfolio of architectural and interior design projects
+            crafted with creativity, precision, and innovation.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- GALLERY -->
+
+<section class="py-24 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+
+        <!-- HEADER -->
+
+        <div class="text-center mb-16">
+
+            <h2 class="text-4xl md:text-5xl font-bold text-[#7A0048]">
+                Gallery
+            </h2>
+
+
+
+        </div>
+
+
+
+        <!-- GRID -->
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+
+
+
+
+
+            <div class="relative group overflow-hidden rounded-2xl">
+
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+                    class="w-full h-[260px] object-cover group-hover:scale-110 transition duration-500">
+
+                <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+
+                    <span class="text-white font-semibold">
+                        Modern Villa
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="relative group overflow-hidden rounded-2xl">
+
+                <img src="https://images.unsplash.com/photo-1599423300746-b62533397364"
+                    class="w-full h-[260px] object-cover group-hover:scale-110 transition duration-500">
+
+                <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+
+                    <span class="text-white font-semibold">
+                        Minimal Interior
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="relative group overflow-hidden rounded-2xl">
+
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7"
+                    class="w-full h-[260px] object-cover group-hover:scale-110 transition duration-500">
+
+                <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+
+                    <span class="text-white font-semibold">
+                        Luxury Dining
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="relative group overflow-hidden rounded-2xl">
+
+                <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
+                    class="w-full h-[260px] object-cover group-hover:scale-110 transition duration-500">
+
+                <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+
+                    <span class="text-white font-semibold">
+                        Architectural Design
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

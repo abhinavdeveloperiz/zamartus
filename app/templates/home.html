@@ -4,7 +4,7 @@
 {% block content %}
 
 <!-- HERO SECTION -->
-<section class="relative min-h-[90vh] flex items-center">
+<section class="relative h-[70vh] md:h-[100vh] flex items-center" data-aos="zoom-out">
 
     <!-- Background Image -->
     <div class="absolute inset-0">
@@ -24,16 +24,15 @@
                 Guiding Career Success
             </p>
 
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6
                        border-l-4 border-b-4 border-[#d97706] pl-4 pb-4 inline-block">
                 Gateway to Global Education
                 & Career Success
             </h1>
 
-            <p class="text-gray-200 mb-8 text-lg">
+            <p class="text-gray-200 mb-8 text-md text-justify text-leading-relaxed">
                 ZAMARTUS is a next-generation education mentoring and skill-development
-                platform designed to help students discover their true potential,
-                choose the right career paths and grow into successful professionals.
+                platform designed to help students discover their true potential
             </p>
 
             <div class="flex gap-4 flex-wrap">
@@ -164,11 +163,12 @@
 
             <!-- Main Image -->
             <img src="https://www.karmelinternational.org/blog/files/blog/WhatsApp%20Image%202025-05-04%20at%209.56.58%20PM.jpeg"
-                class="rounded-3xl shadow-xl w-[420px]">
+                class="rounded-3xl shadow-xl w-[420px]" data-aos="fade-right">
 
             <!-- Second Image -->
             <img src="https://t3.ftcdn.net/jpg/05/60/70/68/360_F_560706812_0GNEvn3tqo6OVQtE0JIvlwZx8fu6S2SR.jpg"
-                class="rounded-3xl shadow-xl w-[240px] absolute -bottom-10 -right-6 border-8 border-white">
+                class="rounded-3xl shadow-xl w-[240px] absolute -bottom-10 -right-6 border-8 border-white"
+                data-aos="fade-left">
 
         </div>
 
@@ -309,7 +309,7 @@
 
             <!-- CARD -->
 
-            <div
+            <div 
                 class="relative min-w-[300px] md:min-w-[360px] h-[420px] rounded-[30px] overflow-hidden shadow-lg group">
 
                 <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063"
@@ -442,11 +442,11 @@
 
     <div class="max-w-7xl mx-auto px-6">
 
-        <!-- SECTION HEADER -->
+        <!-- HEADER -->
 
-        <div class="text-center mb-16">
+        <div class="text-center mb-20">
 
-            <p class="text-[#d97706] font-semibold tracking-wide mb-2">
+            <p class="text-[#d97706] font-semibold tracking-widest mb-3">
                 WHY CHOOSE US
             </p>
 
@@ -454,91 +454,72 @@
                 Why Choose Zamartus
             </h2>
 
-            <p class="text-gray-600 max-w-2xl mx-auto mt-4">
-                Our approach combines scientific career assessment, skill development,
-                and global education guidance to build confident future professionals.
-            </p>
-
         </div>
 
 
 
-        <!-- FEATURE CARDS -->
+        <!-- FEATURES -->
 
-        <div class="grid md:grid-cols-3 gap-10">
+        <div class="grid md:grid-cols-3 gap-16 text-center">
 
-            <!-- CARD -->
 
-            <div
-                class="bg-white rounded-3xl p-10 shadow-lg border-t-4 border-[#7A0048] hover:-translate-y-2 transition">
 
-                <div
-                    class="w-14 h-14 flex items-center justify-center rounded-full bg-[#d97706]/10 text-[#d97706] text-2xl mb-6 mx-auto">
+            <!-- FEATURE -->
 
-                    <i class="fa-solid fa-brain"></i>
+            <div class="feature-doodle" data-aos="zoom-in">
 
-                </div>
+                <img src="{% static 'doodle/Psychometric Career Mapping.png' %}" class="w-62 mx-auto mb-6">
 
                 <h3 class="text-xl font-semibold text-[#7A0048] mb-3">
                     Psychometric Career Mapping
                 </h3>
 
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    We use scientifically validated psychometric assessments to
-                    identify students' strengths, interests, and ideal career paths.
+                <p class="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
+                    Scientifically validated psychometric assessments identify
+                    students' strengths, interests and ideal career paths.
                 </p>
 
             </div>
 
 
 
-            <!-- CARD -->
+            <!-- FEATURE -->
 
-            <div
-                class="bg-white rounded-3xl p-10 shadow-lg border-t-4 border-[#7A0048] hover:-translate-y-2 transition">
+            <div class="feature-doodle" data-aos="zoom-out">
 
-                <div
-                    class="w-14 h-14 flex items-center justify-center rounded-full bg-[#d97706]/10 text-[#d97706] text-2xl mb-6 mx-auto">
-
-                    <i class="fa-solid fa-graduation-cap"></i>
-
-                </div>
+                <img src="{% static 'doodle/Integrated Skill Development.png' %}" class="w-62 mx-auto mb-6">
 
                 <h3 class="text-xl font-semibold text-[#7A0048] mb-3">
                     Integrated Skill Development
                 </h3>
 
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Our programs develop leadership, communication,
-                    and future-ready professional skills alongside academics.
+                <p class="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
+                    Programs designed to develop leadership,
+                    communication and professional skills.
                 </p>
 
             </div>
 
 
 
-            <!-- CARD -->
+            <!-- FEATURE -->
 
-            <div
-                class="bg-white rounded-3xl p-10 shadow-lg border-t-4 border-[#7A0048] hover:-translate-y-2 transition">
+            <div class="feature-doodle" data-aos="zoom-in">
 
-                <div
-                    class="w-14 h-14 flex items-center justify-center rounded-full bg-[#d97706]/10 text-[#d97706] text-2xl mb-6 mx-auto">
-
-                    <i class="fa-solid fa-globe"></i>
-
-                </div>
+                <img src="{% static 'doodle/Global Career Opportunities.png' %}" class="w-62 mx-auto mb-6">
 
                 <h3 class="text-xl font-semibold text-[#7A0048] mb-3">
                     Global Career Opportunities
                 </h3>
 
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    We connect students with international universities,
-                    career pathways, and global employment opportunities.
+                <p class="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
+                    Connect with international universities,
+                    career pathways and global opportunities.
                 </p>
 
             </div>
+
+
 
         </div>
 
@@ -606,11 +587,6 @@
 
 
 
-
-
-
-
-
 <section class="py-24 bg-gray-50">
 
     <div class="max-w-7xl mx-auto px-6">
@@ -630,9 +606,31 @@
         </div>
 
 
+        <!-- NAV BUTTONS -->
+
+        <div class="flex justify-end gap-3 mb-6">
+
+            <button id="prevBtn"
+                class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center hover:bg-gray-100">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+            <button id="nextBtn"
+                class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center hover:bg-gray-100">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+
         <!-- CAROUSEL -->
 
-        <div id="testimonialSlider" class="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4">
+        <div id="testimonialSlider"
+            class="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar">
 
             <!-- CARD -->
 
@@ -679,6 +677,7 @@
             </div>
 
 
+            <!-- CARD 2 -->
 
             <div
                 class="snap-start min-w-[320px] md:min-w-[360px] bg-white rounded-3xl p-8 shadow-lg flex flex-col justify-between">
@@ -723,6 +722,7 @@
             </div>
 
 
+            <!-- CARD 3 -->
 
             <div
                 class="snap-start min-w-[320px] md:min-w-[360px] bg-white rounded-3xl p-8 shadow-lg flex flex-col justify-between">
@@ -773,25 +773,58 @@
 </section>
 
 
+
 <script>
+    const slider = document.getElementById("testimonialSlider");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
 
-    const slider = document.getElementById('testimonialSlider');
+    const scrollAmount = 380; // card width
 
-    let scrollAmount = 0;
+    let autoSlide = setInterval(() => {
+        slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
 
-    function autoScroll() {
-
-        scrollAmount += 1;
-
-        slider.scrollLeft = scrollAmount;
-
-        if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
-            scrollAmount = 0;
+        if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+            slider.scrollTo({ left: 0, behavior: "smooth" });
         }
 
-    }
+    }, 3000);
 
-    setInterval(autoScroll, 30);
 
+    /* NEXT BUTTON */
+
+    nextBtn.addEventListener("click", () => {
+        slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+
+
+    /* PREV BUTTON */
+
+    prevBtn.addEventListener("click", () => {
+        slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+
+
+    /* Pause on hover */
+
+    slider.addEventListener("mouseenter", () => {
+        clearInterval(autoSlide);
+    });
+
+    slider.addEventListener("mouseleave", () => {
+        autoSlide = setInterval(() => {
+            slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+
+            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+                slider.scrollTo({ left: 0, behavior: "smooth" });
+            }
+
+        }, 3000);
+    });
 </script>
+
+
+
+
+
 {% endblock %}
