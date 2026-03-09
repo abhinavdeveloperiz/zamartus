@@ -1,24 +1,23 @@
 {% load static %}
 
-<nav class="bg-white/90 backdrop-blur-md shadow-md fixed w-full z-50">
+<nav class="bg-[#7A0048] backdrop-blur-md shadow-md fixed w-full z-50">
 
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         <a href="{% url 'home' %}" class="flex items-center gap-2">
-            <img src="{% static 'images/logo.png' %}" class="h-10">
+            <img src="{% static 'images/logo.png' %}" class="h-16">
         </a>
 
-        <ul class="hidden md:flex gap-8 font-medium text-gray-700">
-            <li><a href="{% url 'home' %}" class="hover:text-pink-600">Home</a></li>
-            <li><a href="{% url 'about' %}" class="hover:text-pink-600">About</a></li>
-            <li><a href="{% url 'services' %}" class="hover:text-pink-600">Services</a></li>
-            <li><a href="{% url 'management' %}" class="hover:text-pink-600">Management</a></li>
-            <li><a href="{% url 'gallery' %}" class="hover:text-pink-600">Gallery</a></li>
-            <li><a href="{% url 'contact' %}" class="hover:text-pink-600">Contact</a></li>
+        <ul class="hidden md:flex gap-8 font-medium text-white">
+            <li><a href="{% url 'home' %}" class="hover:text-yellow-300">Home</a></li>
+            <li><a href="{% url 'about' %}" class="hover:text-yellow-300">About</a></li>
+            <li><a href="{% url 'services' %}" class="hover:text-yellow-300">Services</a></li>
+            <li><a href="{% url 'gallery' %}" class="hover:text-yellow-300">News</a></li>
+            <li><a href="{% url 'contact' %}" class="hover:text-yellow-300">Contact</a></li>
         </ul>
 
         <button onclick="openMenu()" class="md:hidden text-2xl">
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars text-white"></i>
         </button>
 
     </div>
@@ -43,8 +42,7 @@
         <li><a href="{% url 'home' %}" onclick="closeMenu()">Home</a></li>
         <li><a href="{% url 'about' %}" onclick="closeMenu()">About</a></li>
         <li><a href="{% url 'services' %}" onclick="closeMenu()">Services</a></li>
-        <li><a href="{% url 'management' %}" onclick="closeMenu()">Management</a></li>
-        <li><a href="{% url 'gallery' %}" onclick="closeMenu()">Gallery</a></li>
+        <li><a href="{% url 'gallery' %}" onclick="closeMenu()">News</a></li>
         <li><a href="{% url 'contact' %}" onclick="closeMenu()">Contact</a></li>
 
     </ul>
