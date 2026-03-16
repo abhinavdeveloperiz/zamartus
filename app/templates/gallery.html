@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 
 <section class="relative h-[50vh] md:h-[60vh] flex items-center">
 
@@ -15,13 +15,13 @@
 
     <div class="relative max-w-7xl mx-auto px-6 text-white">
 
-        <h1 class="text-4xl font-bold border-l-4 border-b-4 border-[#d97706] pl-4 pb-4 inline-block">
+        <h1 class="text-4xl md:text-5xl font-bold border-l-4 border-b-4 border-[#d97706] pl-4 pb-4 inline-block">
             News & Updates
         </h1>
 
         <p class="mt-6 text-gray-200 text-md max-w-xl">
             Stay informed with the latest announcements, student achievements,
-            placement success stories
+            and placement success stories.
         </p>
 
     </div>
@@ -32,7 +32,7 @@
 
 <!-- NEWS GRID -->
 
-<section class="py-24 bg-white">
+<section class="py-24 bg-gray-50">
 
     <div class="max-w-7xl mx-auto px-6">
 
@@ -44,51 +44,75 @@
                 Latest News
             </h2>
 
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                Explore our latest announcements, events, collaborations and student success stories.
+            </p>
+
         </div>
 
 
         <!-- GRID -->
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
             {% for news in news %}
 
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition relative group">
+            <!-- NEWS CARD -->
+
+            <div
+                class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 relative group">
 
                 <!-- SHARE BUTTON -->
 
                 <button onclick="shareNews(
-                '{{ news.title|escapejs }}',
-                '{{ request.scheme }}://{{ request.get_host }}'
-                )"
-                    class="absolute top-3 right-3 z-20 bg-white shadow-md rounded-full w-9 h-9 flex items-center justify-center hover:bg-[#7A0048] hover:text-white transition">
+'{{ news.heading|escapejs }}',
+'{{ request.scheme }}://{{ request.get_host }}{% url 'news_detail' news.id %}'
+)" class="absolute top-4 right-4 z-20 bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#7A0048] hover:text-white transition">
 
-                    <i class="fas fa-share-alt text-sm"></i>
+                    <i class="fas fa-share-alt"></i>
 
                 </button>
 
 
                 <!-- IMAGE -->
 
-                <div class="overflow-hidden">
+                <a href="{% url 'news_detail' news.id %}">
 
-                    <img src="{{ news.image.url }}"
-                        class="w-full h-[220px] object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="overflow-hidden">
 
-                </div>
+                        <img src="{{ news.image.url }}"
+                            class="w-full h-[230px] object-cover transform transition duration-500 group-hover:scale-110">
+
+                    </div>
+
+                </a>
 
 
                 <!-- CONTENT -->
 
                 <div class="p-6">
 
-                    <h3 class="text-lg font-semibold text-[#7A0048]">
-                        {{ news.heading }}
-                    </h3>
+                    <a href="{% url 'news_detail' news.id %}">
 
-                    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+                        <h3 class="text-lg font-semibold text-[#7A0048] hover:text-[#d97706] transition">
+                            {{ news.heading }}
+                        </h3>
+
+                    </a>
+
+                    <p class="text-gray-600 text-sm mt-3 leading-relaxed line-clamp-3">
                         {{ news.description }}
                     </p>
+
+
+                    <!-- READ MORE -->
+
+                    <a href="{% url 'news_detail' news.id %}"
+                        class="inline-block mt-4 text-sm font-semibold text-[#7A0048] hover:text-[#d97706] transition">
+
+                        Read More →
+
+                    </a>
 
                 </div>
 
@@ -124,7 +148,7 @@
 
             navigator.clipboard.writeText(shareText);
 
-            alert("News link copied. You can now share it.");
+            alert("News link copied. You can share it.");
 
         }
 

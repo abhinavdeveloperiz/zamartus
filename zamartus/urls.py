@@ -11,6 +11,7 @@ urlpatterns = [
     path('services/', services, name='services'),
     path('management/', management, name='management'),
     path('News/', news, name='gallery'),
+    path('news/<int:id>/', news_details, name='news_detail'),
     path('contact/', contact, name='contact'),
 ]
 
