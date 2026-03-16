@@ -3,8 +3,9 @@
     <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-10">
 
         <div>
-            <h2 class="text-xl font-semibold mb-4">Zamartus</h2>
 
+
+            <img src="/static/images/logonew.png" alt="logo" class="h-16">
             <p class="text-gray-300 text-sm">
                 Leading service provider delivering quality and excellence.
             </p>
@@ -18,6 +19,7 @@
                 <li><a href="{% url 'home' %}" class="hover:text-[#F7B733]">Home</a></li>
                 <li><a href="{% url 'about' %}" class="hover:text-[#F7B733]">About</a></li>
                 <li><a href="{% url 'services' %}" class="hover:text-[#F7B733]">Services</a></li>
+                <li><a href="{% url 'gallery' %}" class="hover:text-[#F7B733]">News</a></li>
                 <li><a href="{% url 'contact' %}" class="hover:text-[#F7B733]">Contact</a></li>
 
             </ul>
@@ -29,7 +31,7 @@
             <ul class="space-y-2 text-gray-300">
 
                 <li><i class="fa fa-location-dot mr-2 text-[#F7B733]"></i> India</li>
-                <li><i class="fa fa-phone mr-2 text-[#F7B733]"></i> +91 9876543210</li>
+                <li><i class="fa fa-phone mr-2 text-[#F7B733]"></i> <a href="tel:+919497274057">+91 949 727 4057</a></li>
                 <li><i class="fa fa-envelope mr-2 text-[#F7B733]"></i> info@zamartus.com</li>
 
             </ul>
@@ -40,10 +42,33 @@
 
             <div class="flex gap-4 text-xl">
 
-                <a href="#" class="hover:text-[#F7B733]"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="hover:text-[#F7B733]"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-[#F7B733]"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="hover:text-[#F7B733]"><i class="fab fa-youtube"></i></a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/profile.php?id=61579538996424" target="_blank"
+                    class="hover:text-[#F7B733]">
+                    <i class="fab fa-facebook"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/zamartus_edusystem/?hl=en" target="_blank"
+                    class="hover:text-[#F7B733]">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/company/zamartus-edusystem/about/?viewAsMember=true" target="_blank"
+                    class="hover:text-[#F7B733]">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@ZAMARTUS_EDUSYSTEM" target="_blank" class="hover:text-[#F7B733]">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+                <!-- X (Twitter) -->
+                <a href="https://x.com/zamartus" target="_blank" class="hover:text-[#F7B733]">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
 
             </div>
 
@@ -54,7 +79,7 @@
     <div class=" text-center py-4 text-gray-50 text-sm">
         © {% now "Y" %} Zamartus. All Rights Reserved.
     </div>
-    <div class="text-center py-4 pb-12 text-gray-50 text-sm">
+    <div class="text-center py-4 pb-12 text-gray-50 text-md hover:scale-110 transition duration-300">
         <a href="https://www.inspirezesttechnologies.com/" target="_blank">Developed By InspireZest technologies Pvt
             Ltd</a>
     </div>

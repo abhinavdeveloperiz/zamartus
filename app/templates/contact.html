@@ -68,8 +68,8 @@
                     <div>
                         <h4 class="font-semibold text-[#7A0048]">Office Address</h4>
                         <p class="text-gray-600 text-sm">
-                            Zamartus Education Consultancy<br>
-                            Kerala, India
+                            CMB arcade, Calicut, 673011
+
                         </p>
                     </div>
 
@@ -85,7 +85,7 @@
                     <div>
                         <h4 class="font-semibold text-[#7A0048]">Phone</h4>
                         <p class="text-gray-600 text-sm">
-                            +91 98765 43210
+                            +91 949 727 4057
                         </p>
                     </div>
 
@@ -121,30 +121,48 @@
                 Send Us a Message
             </h3>
 
-            <form class="space-y-6">
+            <form id="whatsappForm" class="space-y-6">
 
                 <div class="grid md:grid-cols-2 gap-4">
 
-                    <input type="text" placeholder="Your Name"
+                    <input id="name" type="text" placeholder="Your Name"
                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#7A0048]">
 
-                    <input type="email" placeholder="Email Address"
+                    <input id="email" type="email" placeholder="Email Address"
                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#7A0048]">
 
                 </div>
 
-                <input type="text" placeholder="Subject"
+                <input id="subject" type="text" placeholder="Subject"
                     class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#7A0048]">
 
-                <textarea rows="5" placeholder="Your Message"
+                <textarea id="message" rows="5" placeholder="Your Message"
                     class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#7A0048]"></textarea>
 
-                <button
+                <button type="submit"
                     class="bg-[#7A0048] hover:bg-[#5e0037] text-white px-8 py-3 rounded-xl font-semibold transition">
                     Send Message
                 </button>
 
             </form>
+
+
+            <script>
+                document.getElementById("whatsappForm").addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    const name = document.getElementById("name").value;
+                    const email = document.getElementById("email").value;
+                    const subject = document.getElementById("subject").value;
+                    const message = document.getElementById("message").value;
+
+                    const text = `Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}`;
+
+                    const whatsappURL = `https://wa.me/916282436916?text=${text}`;
+
+                    window.open(whatsappURL, "_blank");
+                });
+            </script>
 
         </div>
 
