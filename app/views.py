@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from app.models import Banner, AboutUsImage, TrustedPartner, Service, News
 
 # Create your views here.
 
@@ -15,8 +16,13 @@ def services(request):
 def management(request):
     return render(request, 'management.html')
 
-def gallery(request):
-    return render(request, 'gallery.html')
+def news(request):
+    all_news=News.objects.order_by('-id')
+    context={
+        'news': all_news
+    }
+
+    return render(request, 'gallery.html',context)
 
 def contact(request):
     return render(request, 'contact.html')

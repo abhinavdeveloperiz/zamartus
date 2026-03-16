@@ -20,7 +20,8 @@
         </h1>
 
         <p class="mt-6 text-gray-200 text-md max-w-xl">
-            Stay informed with the latest announcements, student achievements, placement success stories
+            Stay informed with the latest announcements, student achievements,
+            placement success stories
         </p>
 
     </div>
@@ -43,133 +44,93 @@
                 Latest News
             </h2>
 
-
-
         </div>
-
 
 
         <!-- GRID -->
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
+            {% for news in news %}
 
-            <!-- NEWS CARD -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition relative group">
 
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                <!-- SHARE BUTTON -->
+
+                <button onclick="shareNews(
+                '{{ news.title|escapejs }}',
+                '{{ request.scheme }}://{{ request.get_host }}'
+                )"
+                    class="absolute top-3 right-3 z-20 bg-white shadow-md rounded-full w-9 h-9 flex items-center justify-center hover:bg-[#7A0048] hover:text-white transition">
+
+                    <i class="fas fa-share-alt text-sm"></i>
+
+                </button>
+
 
                 <!-- IMAGE -->
 
                 <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
-                        class="w-full h-[220px] object-cover hover:scale-110 transition duration-500">
+
+                    <img src="{{ news.image.url }}"
+                        class="w-full h-[220px] object-cover transform transition duration-500 group-hover:scale-110">
+
                 </div>
+
 
                 <!-- CONTENT -->
 
                 <div class="p-6">
 
                     <h3 class="text-lg font-semibold text-[#7A0048]">
-                        Campus Career Workshop
+                        {{ news.heading }}
                     </h3>
 
                     <p class="text-gray-600 text-sm mt-3 leading-relaxed">
-                        Our recent career development workshop helped students gain
-                        valuable insights into resume building, interview preparation,
-                        and industry expectations.
+                        {{ news.description }}
                     </p>
 
                 </div>
 
             </div>
 
-
-
-            <!-- NEWS CARD -->
-
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-
-                <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0"
-                        class="w-full h-[220px] object-cover hover:scale-110 transition duration-500">
-                </div>
-
-                <div class="p-6">
-
-                    <h3 class="text-lg font-semibold text-[#7A0048]">
-                        Placement Milestone Achieved
-                    </h3>
-
-                    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
-                        Our students reached a new placement milestone this year with
-                        multiple successful job offers from leading companies across
-                        the technology and business sectors.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- NEWS CARD -->
-
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-
-                <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-                        class="w-full h-[220px] object-cover hover:scale-110 transition duration-500">
-                </div>
-
-                <div class="p-6">
-
-                    <h3 class="text-lg font-semibold text-[#7A0048]">
-                        New Industry Partnership
-                    </h3>
-
-                    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
-                        We are proud to announce a new collaboration with industry
-                        leaders to provide students with internships, mentorship,
-                        and hands-on project experience.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- NEWS CARD -->
-
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-
-                <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
-                        class="w-full h-[220px] object-cover hover:scale-110 transition duration-500">
-                </div>
-
-                <div class="p-6">
-
-                    <h3 class="text-lg font-semibold text-[#7A0048]">
-                        Mentorship Program Launch
-                    </h3>
-
-                    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
-                        Our mentorship initiative connects students with experienced
-                        professionals who guide them through career planning and
-                        professional growth opportunities.
-                    </p>
-
-                </div>
-
-            </div>
-
+            {% endfor %}
 
         </div>
 
     </div>
 
 </section>
+
+
+
+<!-- SHARE SCRIPT -->
+
+<script>
+
+    function shareNews(title, url) {
+
+        if (navigator.share) {
+
+            navigator.share({
+                title: title,
+                text: title,
+                url: url
+            });
+
+        } else {
+
+            const shareText = title + " " + url;
+
+            navigator.clipboard.writeText(shareText);
+
+            alert("News link copied. You can now share it.");
+
+        }
+
+    }
+
+</script>
 
 
 {% endblock %}
