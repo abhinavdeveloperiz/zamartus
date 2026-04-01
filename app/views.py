@@ -1,18 +1,36 @@
 from django.shortcuts import render
 from urllib3 import request
-from app.models import Banner, AboutUsImage, TrustedPartner, Service, News
+from app.models import Banner, AboutUsImage, TrustedPartner, Service, News,Testimonials
 
 # Create your views here.
 
 
 def home(request):
-    return render(request, 'home.html')
+    banner=Banner.objects.last()
+    testimonials=Testimonials.objects.order_by('-id')
+    service = Service.objects.all()[:10]
+    context={
+        'banner': banner,
+        'testimonials': testimonials,
+        'services': service
+    }
+    return render(request, 'home.html', context)
 
 def about(request):
-    return render(request, 'about.html')
+    about = AboutUsImage.objects.last()
+    team = TrustedPartner.objects.all()
+    context={
+        'about': about,
+        'team': team
+    }
+    return render(request, 'about.html',context)
 
 def services(request):
-    return render(request, 'services.html')
+    services = Service.objects.all()
+    context={
+        'services': services
+    }
+    return render(request, 'services.html',context)
 
 def management(request):
     return render(request, 'management.html')

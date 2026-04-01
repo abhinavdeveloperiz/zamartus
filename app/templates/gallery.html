@@ -62,18 +62,6 @@
             <div
                 class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 relative group">
 
-                <!-- SHARE BUTTON -->
-
-                <button onclick="shareNews(
-'{{ news.heading|escapejs }}',
-'{{ request.scheme }}://{{ request.get_host }}{% url 'news_detail' news.id %}'
-)" class="absolute top-4 right-4 z-20 bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#7A0048] hover:text-white transition">
-
-                    <i class="fas fa-share-alt"></i>
-
-                </button>
-
-
                 <!-- IMAGE -->
 
                 <a href="{% url 'news_detail' news.id %}">
@@ -126,35 +114,6 @@
 
 </section>
 
-
-
-<!-- SHARE SCRIPT -->
-
-<script>
-
-    function shareNews(title, url) {
-
-        if (navigator.share) {
-
-            navigator.share({
-                title: title,
-                text: title,
-                url: url
-            });
-
-        } else {
-
-            const shareText = title + " " + url;
-
-            navigator.clipboard.writeText(shareText);
-
-            alert("News link copied. You can share it.");
-
-        }
-
-    }
-
-</script>
 
 
 {% endblock %}

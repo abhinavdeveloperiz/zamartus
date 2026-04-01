@@ -80,7 +80,7 @@
 
         <div class="relative" data-aos="zoom-out">
 
-            <img src="{% static 'doodle/about.png' %}">
+            <img src="{{ about.image.url }}">
 
         </div>
 
@@ -117,39 +117,26 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-            <!-- CARD 1 -->
-            <div class="bg-white p-8 text-center group hover:-translate-y-3 transition duration-300">
-                <div class="relative w-44 h-44 mx-auto mb-6">
-                    <img src="/static/team/Chairman.jpeg"
-                        class="w-44 h-44 rounded-full object-cover border-4 border-[#d97706] group-hover:scale-105 transition">
-                </div>
 
-                <h3 class="text-2xl font-semibold text-[#7A0048]">
-                    Adv Abdullah Al Enezi
-                </h3>
-
-                <p class="text-[#d97706] font-medium text-sm mt-1">
-                    Chairman
-                </p>
-            </div>
-
+            {% for member in team %}
             <!-- CARD 2 -->
             <div class="bg-white p-8 text-center group hover:-translate-y-3 transition duration-300">
                 <div class="relative w-44 h-44 mx-auto mb-6">
-                    <img src="/static/team/director.jpeg"
+                    <img src="{{ member.image.url }}"
                         class="w-44 h-44 rounded-full object-cover border-4 border-[#d97706] group-hover:scale-105 transition">
                 </div>
 
                 <h3 class="text-2xl font-semibold text-[#7A0048]">
-                    Adv fr subin Manathara
+                    {{ member.name }}
                 </h3>
 
                 <p class="text-[#d97706] font-medium text-sm mt-1">
-                    Director
+                    {{ member.position }}
                 </p>
 
 
             </div>
+            {% endfor %}
 
         </div>
 

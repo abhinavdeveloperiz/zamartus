@@ -8,8 +8,7 @@
 
     <!-- Background Image -->
     <div class="absolute inset-0">
-        <img src="https://s39613.pcdn.co/wp-content/uploads/2025/04/iStock-1998218882-scaled.jpg"
-            class="w-full h-full object-cover">
+        <img src="{{ banner.image.url }}" alt="Banner Image" class="w-full h-full object-cover">
     </div>
 
     <!-- Dark Overlay -->
@@ -26,12 +25,11 @@
 
             <h1 class="text-3xl md:text-5xl font- leading-tight mb-6
                        border-l-4 border-b-4 border-[#d97706] pl-4 pb-4 inline-block">
-                Global academic intelligence & career advancement system
+                {{ banner.title }}
             </h1>
 
             <p class="text-gray-200 mb-8 text-md text-justify text-leading-relaxed">
-                Zamartus is a scientific decision center and next-generation education mentoring and skill-development
-                platform designed to help students discover their true potential
+                {{ banner.subtitle }}
             </p>
 
             <div class="flex gap-4 flex-wrap">
@@ -154,11 +152,10 @@
         <div class="relative flex justify-center md:justify-start">
 
             <!-- Main Image -->
-            <img src="https://www.karmelinternational.org/blog/files/blog/WhatsApp%20Image%202025-05-04%20at%209.56.58%20PM.jpeg"
-                class="rounded-3xl shadow-xl w-[420px]" data-aos="fade-right">
+            <img src="/static/about/1.jpeg" class="rounded-3xl shadow-xl w-[420px]" data-aos="fade-right">
 
             <!-- Second Image -->
-            <img src="https://t3.ftcdn.net/jpg/05/60/70/68/360_F_560706812_0GNEvn3tqo6OVQtE0JIvlwZx8fu6S2SR.jpg"
+            <img src="/static/about/2.jpg"
                 class="rounded-3xl shadow-xl w-[240px] absolute -bottom-10 -right-6 border-8 border-white"
                 data-aos="fade-left">
 
@@ -300,11 +297,11 @@
         <div class="flex gap-8 overflow-x-auto pb-4 scroll-smooth">
 
             <!-- CARD -->
-
+            {% for s in services %}
             <div
                 class="relative min-w-[300px] md:min-w-[360px] h-[420px] rounded-[30px] overflow-hidden shadow-lg group">
 
-                <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063"
+                <img src="{{ s.image.url }}"
                     class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
@@ -312,112 +309,16 @@
                 <div class="absolute bottom-6 left-6 right-6">
 
                     <h3 class="text-yellow-400 text-xl font-semibold">
-                        Psychometric Assessment
+                        {{ s.title }}
                     </h3>
 
                 </div>
 
             </div>
+            {% endfor %}
 
 
 
-            <div
-                class="relative min-w-[300px] md:min-w-[360px] h-[420px] rounded-[30px] overflow-hidden shadow-lg group">
-
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-                <div class="absolute bottom-6 left-6 right-6">
-
-                    <h3 class="text-yellow-400 text-xl font-semibold">
-                        Academic Admission Strategy
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-
-            <div
-                class="relative min-w-[300px] md:min-w-[360px] h-[420px] rounded-[30px] overflow-hidden shadow-lg group">
-
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-                <div class="absolute bottom-6 left-6 right-6">
-
-                    <h3 class="text-yellow-400 text-xl font-semibold">
-                        Skill Development Programs
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-
-            <div
-                class="relative min-w-[300px] md:min-w-[360px] h-[420px] rounded-[30px] overflow-hidden shadow-lg group">
-
-                <img src="https://images.unsplash.com/photo-1588072432836-e10032774350"
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-                <div class="absolute bottom-6 left-6 right-6">
-
-                    <h3 class="text-yellow-400 text-xl font-semibold">
-                        Competitive Exam Preparation
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-
-            <div
-                class="relative min-w-[300px] md:min-w-[360px] h-[420px] rounded-[30px] overflow-hidden shadow-lg group">
-
-                <img src="https://cdn.prod.website-files.com/681bd1bfd92e542e63e4ef97/682f75529d0edae32c81b8bd_682f518f763e855e265b4c86_67294a11d72ce2d186072f98_blog%25253Ahow-to-measure-the-success-of-corporate-mentorship-programs.webp"
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-                <div class="absolute bottom-6 left-6 right-6">
-
-                    <h3 class="text-yellow-400 text-xl font-semibold">
-                        Mentorship Programs
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-
-            <div
-                class="relative min-w-[300px] md:min-w-[360px] h-[420px] rounded-[30px] overflow-hidden shadow-lg group">
-
-                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-                <div class="absolute bottom-6 left-6 right-6">
-
-                    <h3 class="text-yellow-400 text-xl font-semibold">
-                        Global Career Pathways
-                    </h3>
-
-                </div>
-
-            </div>
 
 
         </div>
@@ -623,42 +524,48 @@
         <div id="testimonialSlider"
             class="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar">
 
-            <!-- CARD -->
 
+
+            {% for t in testimonials %}
             <div
                 class="snap-start min-w-[320px] md:min-w-[360px] bg-white rounded-3xl p-8 shadow-lg flex flex-col justify-between">
 
                 <div>
 
+                    <!-- Dynamic Rating -->
                     <div class="flex text-[#d97706] mb-4 text-lg">
+                        {% for i in "12345"|slice:":t.rating" %}
                         <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+                        {% endfor %}
                     </div>
 
+                    <!-- Dynamic Feedback -->
                     <p class="text-gray-600 leading-relaxed mb-6">
-                        Zamartus helped me understand my strengths through
-                        psychometric assessment. The mentorship and career
-                        guidance helped me confidently choose the right path.
+                        {{ t.feedback }}
                     </p>
 
                 </div>
 
                 <div class="flex items-center gap-4">
 
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                    <!-- Dynamic Image -->
+                    {% if t.image %}
+                    <img src="{{ t.image.url }}" class="w-12 h-12 rounded-full object-cover">
+                    {% else %}
+                    <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
                         class="w-12 h-12 rounded-full object-cover">
+                    {% endif %}
 
                     <div>
 
+                        <!-- Dynamic Name -->
                         <h4 class="font-semibold text-[#7A0048]">
-                            Arjun Nair
+                            {{ t.name }}
                         </h4>
 
+                        <!-- Optional extra field (if you add later like role/designation) -->
                         <p class="text-sm text-gray-500">
-                            Engineering Student
+                            Testimonial User
                         </p>
 
                     </div>
@@ -666,96 +573,7 @@
                 </div>
 
             </div>
-
-
-            <!-- CARD 2 -->
-
-            <div
-                class="snap-start min-w-[320px] md:min-w-[360px] bg-white rounded-3xl p-8 shadow-lg flex flex-col justify-between">
-
-                <div>
-
-                    <div class="flex text-[#d97706] mb-4 text-lg">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        The mentors helped me prepare for international
-                        admissions and guided me through every step of my
-                        academic planning journey.
-                    </p>
-
-                </div>
-
-                <div class="flex items-center gap-4">
-
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg"
-                        class="w-12 h-12 rounded-full object-cover">
-
-                    <div>
-
-                        <h4 class="font-semibold text-[#7A0048]">
-                            Meera Joseph
-                        </h4>
-
-                        <p class="text-sm text-gray-500">
-                            Medical Aspirant
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- CARD 3 -->
-
-            <div
-                class="snap-start min-w-[320px] md:min-w-[360px] bg-white rounded-3xl p-8 shadow-lg flex flex-col justify-between">
-
-                <div>
-
-                    <div class="flex text-[#d97706] mb-4 text-lg">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        Their career strategy and mentoring helped me
-                        choose the right university and develop the
-                        skills needed for future opportunities.
-                    </p>
-
-                </div>
-
-                <div class="flex items-center gap-4">
-
-                    <img src="https://randomuser.me/api/portraits/men/54.jpg"
-                        class="w-12 h-12 rounded-full object-cover">
-
-                    <div>
-
-                        <h4 class="font-semibold text-[#7A0048]">
-                            Rahul Menon
-                        </h4>
-
-                        <p class="text-sm text-gray-500">
-                            MBA Student
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
+            {% endfor %}
 
         </div>
 

@@ -15,6 +15,7 @@ class Banner(models.Model):
         verbose_name = 'Banner'
         verbose_name_plural = 'Banners'
 
+
 class AboutUsImage(models.Model):
     image = models.ImageField(upload_to='about_us/')
 
@@ -29,8 +30,7 @@ class AboutUsImage(models.Model):
 class TrustedPartner(models.Model):
     name = models.CharField(max_length=255)
     position = models.CharField(max_length=255,null=True, blank=True)
-    mail = models.EmailField(null=True, blank=True)
-
+    image = models.ImageField(upload_to='trusted_partners/', null=True, blank=True)
     def __str__(self):
         return self.name
     
@@ -41,6 +41,7 @@ class TrustedPartner(models.Model):
 
 class Service(models.Model):
     title = models.CharField(max_length=255)
+    description = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='services/')
 
     def __str__(self):
